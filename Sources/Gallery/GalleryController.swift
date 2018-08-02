@@ -48,21 +48,21 @@ public class GalleryController: UIViewController, PermissionControllerDelegate {
 
   func makeImagesController() -> ImagesController {
     let controller = ImagesController(cart: cart)
-    controller.title = "Gallery.Images.Title".g_localize(fallback: "PHOTOS")
+    controller.title = "Gallery.Images.Title".g_localize(fallback: "Fotos")
 
     return controller
   }
 
   func makeCameraController() -> CameraController {
     let controller = CameraController(cart: cart)
-    controller.title = "Gallery.Camera.Title".g_localize(fallback: "CAMERA")
+    controller.title = "Gallery.Camera.Title".g_localize(fallback: "Cámara")
 
     return controller
   }
 
   func makeVideosController() -> VideosController {
     let controller = VideosController(cart: cart)
-    controller.title = "Gallery.Videos.Title".g_localize(fallback: "VIDEOS")
+    controller.title = "Gallery.Videos.Title".g_localize(fallback: "Videos")
 
     return controller
   }
@@ -77,15 +77,25 @@ public class GalleryController: UIViewController, PermissionControllerDelegate {
     let tabsToShow = Config.tabsToShow.compactMap { $0 != .cameraTab ? $0 : (useCamera ? $0 : nil) }
 
     let controllers: [UIViewController] = tabsToShow.compactMap { tab in
-      if tab == .imageTab {
-        return makeImagesController()
-      } else if tab == .cameraTab {
-        return makeCameraController()
-      } else if tab == .videoTab {
-        return makeVideosController()
-      } else {
-        return nil
-      }
+        
+        if tab == .imageTab {
+            return makeImagesController()
+        } else if tab == .cameraTab {
+            return makeCameraController()
+        } else {
+            return nil
+        }
+        
+        
+//      if tab == .imageTab {
+//        return makeImagesController()
+//      } else if tab == .cameraTab {
+//        return makeCameraController()
+//      } else if tab == .videoTab {
+//        return makeVideosController()
+//      } else {
+//        return nil
+//      }
     }
 
     guard !controllers.isEmpty else {
