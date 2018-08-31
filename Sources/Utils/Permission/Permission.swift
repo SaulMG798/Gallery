@@ -48,6 +48,7 @@ struct Permission {
       case .authorized:
         return .authorized
       }
+        //actualizado
     }
 
     static func request(_ completion: @escaping () -> Void) {
