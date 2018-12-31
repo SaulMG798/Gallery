@@ -78,23 +78,23 @@ public class GalleryController: UIViewController, PermissionControllerDelegate {
 
     let controllers: [UIViewController] = tabsToShow.compactMap { tab in
         
+//        if tab == .imageTab {
+//            return makeImagesController()
+//        } else if tab == .cameraTab {
+//            return makeCameraController()
+//        } else {
+//            return nil
+//        }
+        
         if tab == .imageTab {
             return makeImagesController()
         } else if tab == .cameraTab {
             return makeCameraController()
+        } else if tab == .videoTab {
+            return makeVideosController()
         } else {
             return nil
         }
-        
-        //      if tab == .imageTab {
-        //        return makeImagesController()
-        //      } else if tab == .cameraTab {
-        //        return makeCameraController()
-        //      } else if tab == .videoTab {
-        //        return makeVideosController()
-        //      } else {
-        //        return nil
-        //      }
     }
 
     guard !controllers.isEmpty else {
