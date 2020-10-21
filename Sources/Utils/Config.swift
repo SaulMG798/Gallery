@@ -104,7 +104,7 @@ public struct Config {
       public static var regular: UIFont = UIFont.systemFont(ofSize: 1)
       public static var bold: UIFont = UIFont.boldSystemFont(ofSize: 1)
       public static var semibold: UIFont = UIFont.boldSystemFont(ofSize: 1)
-      public static var textDone: String = "Enviar"
+      public static var textDone: String = "Seleccionar"
     }
   }
 
