@@ -223,7 +223,7 @@ class CameraView: UIView, UIGestureRecognizerDelegate {
     button.setTitleColor(UIColor.white, for: UIControlState())
     button.setTitleColor(UIColor.lightGray, for: .disabled)
     button.titleLabel?.font = Config.Font.Text.regular.withSize(16)
-    button.setTitle("Gallery.Done".g_localize(fallback: Config.Font.Text.textDone), for: UIControlState())
+    button.setTitle("Gallery.Done".g_localize(fallback: "Seleccionar"), for: UIControlState())
 
     return button
   }
